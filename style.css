@@ -1,0 +1,417 @@
+/* STREAMING_CHUNK:Defining light theme variables and reset */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+}
+
+:root {
+--bg-main: #FFFFFF;
+--bg-secondary: #F8FAFC;
+--text-dark: #1E293B;
+--text-light: #64748B;
+--primary-color: #059669; /* Emerald Green */
+--primary-light: #D1FAE5;
+--shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+--shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+--shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+--border-color: #E2E8F0;
+}
+
+body {
+background-color: var(--bg-main);
+color: var(--text-dark);
+line-height: 1.7;
+}
+
+/* STREAMING_CHUNK:Styling the minimalist navigation bar /
+/ Navigation */
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background-color: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(8px);
+z-index: 100;
+padding: 1.5rem 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: all 0.3s ease;
+border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+padding: 1rem 5%;
+box-shadow: var(--shadow-sm);
+border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--text-dark);
+letter-spacing: -0.5px;
+}
+
+.logo span {
+color: var(--primary-color);
+font-size: 2rem;
+line-height: 0;
+}
+
+.nav-links {
+display: flex;
+gap: 2.5rem;
+list-style: none;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--text-light);
+font-weight: 500;
+font-size: 0.95rem;
+transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+color: var(--primary-color);
+}
+
+.menu-icon {
+display: none;
+font-size: 1.5rem;
+color: var(--text-dark);
+cursor: pointer;
+}
+
+/* STREAMING_CHUNK:Styling layout sections and headers /
+/ Layout & Typography */
+section {
+padding: 6rem 5% 4rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.section-bg {
+background-color: var(--bg-secondary);
+max-width: 100%;
+}
+
+.section-header {
+text-align: center;
+margin-bottom: 3.5rem;
+}
+
+.section-header h2 {
+font-size: 2.2rem;
+font-weight: 700;
+color: var(--text-dark);
+margin-bottom: 0.5rem;
+}
+
+.section-header p {
+color: var(--text-light);
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* STREAMING_CHUNK:Styling the hero section /
+/ Hero Section */
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding-top: 8rem;
+}
+
+.hero-content {
+max-width: 800px;
+}
+
+.badge {
+background-color: var(--primary-light);
+color: var(--primary-color);
+padding: 0.5rem 1.2rem;
+border-radius: 50px;
+font-size: 0.85rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+display: inline-block;
+margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+font-size: 4rem;
+font-weight: 700;
+line-height: 1.2;
+margin-bottom: 1rem;
+color: var(--text-dark);
+letter-spacing: -1px;
+}
+
+.hero .subtitle {
+font-size: 1.5rem;
+color: var(--primary-color);
+font-weight: 500;
+margin-bottom: 1.5rem;
+}
+
+.hero .bio {
+font-size: 1.1rem;
+color: var(--text-light);
+margin-bottom: 2.5rem;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* STREAMING_CHUNK:Styling buttons /
+/ Buttons */
+.btn-group {
+display: flex;
+gap: 1rem;
+justify-content: center;
+}
+
+.btn {
+padding: 0.8rem 2rem;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+transition: all 0.3s ease;
+font-size: 1rem;
+}
+
+.btn-primary {
+background-color: var(--primary-color);
+color: white;
+box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.39);
+}
+
+.btn-primary:hover {
+background-color: #047857;
+transform: translateY(-2px);
+}
+
+.btn-secondary {
+background-color: white;
+color: var(--text-dark);
+border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+border-color: var(--text-dark);
+transform: translateY(-2px);
+}
+
+/* STREAMING_CHUNK:Styling cards for the focus section /
+/ Focus Cards (Grid) */
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.focus-card {
+background: var(--bg-main);
+padding: 2.5rem 2rem;
+border-radius: 12px;
+border: 1px solid var(--border-color);
+box-shadow: var(--shadow-sm);
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.focus-card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-hover);
+border-color: var(--primary-color);
+}
+
+.icon-wrapper {
+width: 60px;
+height: 60px;
+background-color: var(--primary-light);
+color: var(--primary-color);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+margin: 0 auto 1.5rem;
+transition: transform 0.3s;
+}
+
+.focus-card:hover .icon-wrapper {
+transform: scale(1.1) rotate(5deg);
+}
+
+.focus-card h3 {
+margin-bottom: 1rem;
+color: var(--text-dark);
+font-size: 1.3rem;
+}
+
+.focus-card p {
+color: var(--text-light);
+font-size: 0.95rem;
+}
+
+/* STREAMING_CHUNK:Styling skills pills /
+/ Skills Pills */
+.skills-container {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.skill-pill {
+background-color: var(--bg-secondary);
+border: 1px solid var(--border-color);
+padding: 0.7rem 1.5rem;
+border-radius: 50px;
+font-weight: 500;
+color: var(--text-dark);
+display: flex;
+align-items: center;
+gap: 0.5rem;
+transition: all 0.2s ease;
+}
+
+.skill-pill i {
+color: var(--primary-color);
+}
+
+.skill-pill:hover {
+background-color: var(--primary-color);
+color: white;
+border-color: var(--primary-color);
+}
+
+.skill-pill:hover i {
+color: white;
+}
+
+/* STREAMING_CHUNK:Styling contact section /
+/ Contact Area */
+.contact-wrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+justify-content: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.contact-box {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+background: var(--bg-main);
+padding: 1.5rem 2.5rem;
+border-radius: 12px;
+border: 1px solid var(--border-color);
+text-decoration: none;
+box-shadow: var(--shadow-sm);
+transition: all 0.3s ease;
+flex: 1;
+min-width: 300px;
+}
+
+.contact-box:hover {
+transform: translateY(-3px);
+box-shadow: var(--shadow-hover);
+border-color: var(--primary-color);
+}
+
+.contact-icon {
+font-size: 2rem;
+color: var(--primary-color);
+}
+
+.contact-text h4 {
+color: var(--text-light);
+font-size: 0.9rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 0.2rem;
+}
+
+.contact-text p {
+color: var(--text-dark);
+font-weight: 600;
+font-size: 1.1rem;
+word-break: break-all;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 2.5rem 5%;
+border-top: 1px solid var(--border-color);
+color: var(--text-light);
+font-size: 0.9rem;
+}
+
+/* STREAMING_CHUNK:Adding mobile responsive queries /
+/ Responsive Design */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+.hero h1 { font-size: 2.8rem; }
+.hero .subtitle { font-size: 1.2rem; }
+
+.btn-group {
+    flex-direction: column;
+}
+
+.menu-icon {
+    display: block;
+}
+
+.nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-main);
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-in-out;
+}
+
+.nav-links.show {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav-links a {
+    display: block;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}}
